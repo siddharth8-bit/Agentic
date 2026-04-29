@@ -1,7 +1,7 @@
 export default function About() {
   function startTour() {
     localStorage.setItem("tourMode", "active");
-    window.location.href = "/?tour=1";
+    window.location.href = "#/?tour=1";
   }
 
   return (

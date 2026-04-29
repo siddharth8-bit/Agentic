@@ -30,7 +30,7 @@ export default function App() {
     }, 7900);
 
     const simulationTimer = setTimeout(() => {
-      window.location.href = "/simulation?tour=1";
+      window.location.href = "#/simulation?tour=1";
     }, 10800);
 
     function handleEsc(e) {
@@ -40,7 +40,7 @@ export default function App() {
         clearTimeout(dashboardTimer);
         clearTimeout(simulationTimer);
         localStorage.removeItem("tourMode");
-        window.location.href = "/about";
+        window.location.href = "#/about";
       }
     }
 
