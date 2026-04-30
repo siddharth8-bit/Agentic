@@ -10,7 +10,8 @@ import Dashboard from "./sections/Dashboard";
 
 export default function App() {
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+   const hashQuery = window.location.hash.split("?")[1] || "";
+const params = new URLSearchParams(hashQuery);
     const isTour = params.get("tour") === "1";
 
     if (!isTour) return;

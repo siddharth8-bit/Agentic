@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [active, setActive] = useState("overview");
+  const navigate = useNavigate();
+
+  function goToSection(id) {
+    navigate("/");
+
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  }
 
   useEffect(() => {
     const sections = ["overview", "architecture", "analysis", "dashboard"];
@@ -30,8 +41,8 @@ export default function Navbar() {
 
   const linkClass = (id) =>
     active === id
-      ? "text-cyan-300 transition"
-      : "hover:text-white transition";
+      ? "text-cyan-300 transition cursor-pointer"
+      : "hover:text-white transition cursor-pointer";
 
   return (
     <motion.nav
@@ -52,21 +63,21 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex gap-8 text-sm tracking-wide text-slate-300">
-          <a href="#overview" className={linkClass("overview")}>
+          <button onClick={() => goToSection("overview")} className={linkClass("overview")}>
             Overview
-          </a>
+          </button>
 
-          <a href="#architecture" className={linkClass("architecture")}>
+          <button onClick={() => goToSection("architecture")} className={linkClass("architecture")}>
             Architecture
-          </a>
+          </button>
 
-          <a href="#analysis" className={linkClass("analysis")}>
+          <button onClick={() => goToSection("analysis")} className={linkClass("analysis")}>
             Signal Analysis
-          </a>
+          </button>
 
-          <a href="#dashboard" className={linkClass("dashboard")}>
+          <button onClick={() => goToSection("dashboard")} className={linkClass("dashboard")}>
             Dashboard
-          </a>
+          </button>
 
           <Link to="/about" className="hover:text-cyan-300 transition">
             About

@@ -133,7 +133,8 @@ export default function Simulation() {
   }, [selectedCandidate]);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+    const hashQuery = window.location.hash.split("?")[1] || "";
+const params = new URLSearchParams(hashQuery);
     const isTour = params.get("tour") === "1";
 
     if (!isTour) return;
@@ -157,7 +158,7 @@ export default function Simulation() {
 
     const returnTimer = setTimeout(() => {
       localStorage.removeItem("tourMode");
-      window.location.href = "/about";
+      window.location.href = "#/about";
     }, 18500);
 
     function handleEsc(e) {
@@ -167,7 +168,7 @@ export default function Simulation() {
         clearTimeout(analysisTimer);
         clearTimeout(returnTimer);
         localStorage.removeItem("tourMode");
-        window.location.href = "/about";
+        window.location.href = "#/about";
       }
     }
 

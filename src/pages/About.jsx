@@ -7,9 +7,8 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#06090f] text-white px-8 py-24">
       <div className="max-w-6xl mx-auto">
-
         <a
-          href="/"
+          href="#/"
           className="border border-white/10 px-5 py-3 text-sm hover:bg-white/5 transition"
         >
           ← Return Home
@@ -42,31 +41,15 @@ export default function About() {
 
             <p className="text-slate-300 leading-relaxed text-lg">
               This project is based on an agentic AI system that uses multimodal
-              interaction signals from a training phase to refine candidate profiles
-              for smarter internship allocation. The system does not rely only on
-              marks, resumes, or basic skill lists. Instead, it evaluates multiple
-              behavioral and cognitive indicators such as confidence, adaptability,
-              communication quality, leadership ability, technical reasoning,
-              decision stability, and company-specific compatibility.
+              interaction signals from a training phase to refine candidate
+              profiles for smarter internship allocation.
             </p>
 
             <p className="text-slate-400 leading-relaxed text-lg mt-6">
-              The website implements this idea as a professional intelligence-style
-              platform. The homepage explains the system architecture, multimodal
-              signal analysis process, operational dashboard, and company alignment
-              logic. The simulation page allows users to select different candidate
-              profiles and observe how the system processes their unique metrics,
-              evaluates company compatibility, and generates a strategic allocation
-              explanation.
-            </p>
-
-            <p className="text-slate-400 leading-relaxed text-lg mt-6">
-              The implementation uses React, Vite, Tailwind CSS, Framer Motion, and
-              Recharts to create a polished enterprise-style interface. Candidate
-              profiles are represented using structured data, while the simulation
-              dynamically changes metrics, recommended organizations, compatibility
-              scores, processing outputs, and AI-style reasoning based on the selected
-              candidate.
+              The website implements this concept through a professional
+              intelligence-style interface, system architecture, dashboard,
+              candidate simulation, company compatibility engine, and AI-style
+              allocation reasoning.
             </p>
 
             <button
@@ -75,10 +58,6 @@ export default function About() {
             >
               Start Guided Site Tour
             </button>
-
-            <p className="text-slate-500 text-sm mt-4">
-              Press ESC anytime during the tour to terminate and return here.
-            </p>
           </div>
         </div>
       </div>
